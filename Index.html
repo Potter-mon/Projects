@@ -1,0 +1,218 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            text-shadow: 2px 1px 5px gold;
+        }
+
+        h3{
+            text-align: center;
+            color: brown;
+        }
+
+        .box1 {
+            position: relative;
+            left: 425px;
+            width: 675px;
+            height: 400px;
+            border: 5px cyan solid;
+            box-shadow: 2px 1px 5px cyan;
+            background-image: url("a.jpg");
+            background-size: 100% 100%;
+
+            transition: all 1s;
+        }
+
+        .a {
+            background-color: white;
+        }
+
+        .b {
+            color: black;
+            text-shadow: 2px 1px 5px brown;
+        }
+
+        .c {
+            border: navy 5px solid;
+            box-shadow: 2px 1px 5px teal;
+        }
+
+        .d {
+            background-color: black;
+            border: paleturquoise 5px solid;
+            border-radius: 47px;
+            text-decoration: none;
+        }
+
+        .h {
+            animation-name: anime;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes anime {
+            0% {
+                font-size: 20px;
+                opacity: 0.1;
+            }
+
+            25% {
+                font-size: 40px;
+                opacity: 0.2;
+            }
+
+            50% {
+                font-size: 80px;
+                opacity: 0.5;
+            }
+
+            75% {
+                font-size: 40px;
+                opacity: 0.7;
+            }
+
+            100% {
+                font-size: 20px;
+                opacity: 1;
+            }
+        }
+
+        #loader {
+            height: 130px;
+            width: 130px;
+            border: 20px black solid;
+            border-top: 20px royalblue solid;
+            border-radius: 100%;
+
+            animation-name: load;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+
+        @keyframes load {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        #container{
+            display: none;
+            position: relative;
+
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+        @keyframes fade{
+            0%{
+                bottom: 50px;
+                opacity: 0;
+            }
+            50%{
+                bottom: 25px;
+                opacity: 0.5;
+            }
+            100%{
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
+
+        #sidebar {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 230px;
+            background-color: royalblue;
+            position: fixed;
+            transition: 1s;
+        }
+
+        #sidebar ul {
+            margin-top: 150px;
+            text-align: center;
+            list-style: none;
+        }
+
+        #sidebar li {
+            line-height: 70px;
+            font-size: 25px;
+            border-top: rgb(98, 131, 231) solid;
+            border-bottom: rgb(98, 131, 231) solid;
+        }
+
+        #sidebar a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div id="loader"></div>
+    <div id="container">
+
+        <button onclick="change()">Light/Dark mode</button> <br><br>
+
+        <button onclick="show()">&#9776;</button>
+    <div id="sidebar">
+        <button onclick="hide()">X</button>
+
+        <ul>
+            <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ProjectCalculator.html">Prices</a> </li>
+            <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ToDoList.html">Dream List</a> </li>
+            <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ProjectAbout.html">About</a> </li>
+            <li> <a href="">Contact Us</a> </li>
+            <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/forms4HW.html">Sign in</a> </li>
+        </ul>
+    </div>
+
+            <h1 id="head" class="h">AirGo Aviation</h1>
+            <h3>Soar and Go</h3>
+            <div class="box1" id="bbox"></div>
+</body>
+<script>
+    function show() {
+        document.querySelector("#sidebar").style.left = "0px";
+    }
+    function hide() {
+        document.querySelector("#sidebar").style.left = "-230px";
+    }
+
+    var img = ["plane.jpg", "lighthouse.jpg", "machang.jpg"];
+    var x = 0;
+    function slide() {
+        x++;
+        if (x == 3) {
+            x = 0
+        }
+        document.querySelector(".box1").style.backgroundImage = "url(" + img[x] + ")";
+    }
+
+    setInterval(slide, 3000)
+
+    function change() {
+        document.querySelector("#body").classList.toggle("a");
+        document.querySelector("#head").classList.toggle("b");
+        document.querySelector("#bbox").classList.toggle("c");
+        document.querySelector("#nav").classList.toggle("d");
+    }
+    function wait() {
+        document.querySelector("#loader").style.display = "none";
+        document.querySelector("#container").style.display = "block";
+    }
+    setTimeout( wait , 3000);
+</script>
+
+</html>

@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color: white;
+                text-shadow: 2px 1px 5px red;
+                text-align:center;
+            }
+            h2{
+                color: white;
+                text-shadow: 2px 1px 5px red;
+                text-align:center;
+            }
+            h3{
+                color: white;
+                text-shadow: 2px 1px 5px red;
+                text-align:center;
+            }
+            #c{
+                text-align: center;
+            }
+            td{
+                text-align: center;
+                background-color: black;
+                border: skyblue 5px groove;
+            }
+            button{
+                background-color: black;
+                color: skyblue;   
+            }
+            #box{
+                background-color: black;
+                color: skyblue;
+            }
+            table{
+                position: relative;
+                left: 610px;
+                top: 50px;
+                box-shadow: 2px 1px 5px red;
+                height: 350px;
+                width: 300px;
+
+            }
+            ul {
+            list-style: none;
+        }
+
+        .navbar li {
+            float: right;
+        }
+
+        .navbar a {
+            padding: 15px;
+            color: silver;
+            text-decoration: none;
+            transition: all 1s;
+        }
+
+        .navbar {
+            height: 47px;
+            background-color: black;
+            line-height: 47px;
+        }
+
+        .navbar a:hover {
+            background-color: cadetblue;
+            font-size: 20px;
+        }
+            
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/FinalProject.html">Home</a></li>
+            <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ToDoList.html">Dream List</a></li>
+            <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ProjectAbout.html">About</a> </li>
+            <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ContactUs.html">Contact us</a></li>
+            </div>  <br>
+
+        <h1>This is our Calculator to help you calculate the prices of our tickets</h1>
+
+        <h2>Our ticket prices</h2>
+        <h3>One Adult ticket = £47</h3>
+        <h3>One Kids ticket = £32</h3>
+        <h3>Family ticket (for 2 adults and one child) = £72</h3>
+
+        <table>
+            <tr>
+                <td colspan = "4"><input type = "text" disabled id = "box"></td>
+            </tr>
+            <tr>
+                <td><button onclick = "number('7')"> 7 </button></td>
+                <td><button onclick = "number('8')"> 8 </button></td>
+                <td><button onclick = "number('9')"> 9 </button></td>
+                <td><button onclick = "number('*')"> x </button></td>
+            </tr>
+            <tr>
+                <td><button onclick = "number('4')"> 4 </button></td>
+                <td><button onclick = "number('5')"> 5 </button></td>
+                <td><button onclick = "number('6')"> 6 </button></td>
+                <td><button onclick = "number('-')"> - </button></td>
+            </tr>
+            <tr>
+                <td><button onclick = "number('1')"> 1 </button></td>
+                <td><button onclick = "number('2')"> 2 </button></td>
+                <td><button onclick = "number('3')"> 3 </button></td>
+                <td><button onclick = "number('+')"> + </button></td>
+            </tr>
+            <tr>
+                <td><button onclick = "number('/')"> / </button></td>
+                <td><button onclick = "number('0')"> 0 </button></td>
+                <td><button onclick = "number('.')"> . </button></td>
+                <td><button onclick = "equal()"> = </button></td>
+            </tr>
+            <tr>
+                <td colspan = "4" id = "c"><button onclick = "document.querySelector('#box').value = '' ">c</button></td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        function number(no){
+            var input = document.querySelector("#box");
+            input.value = input.value + no ;
+        }
+        function equal(){
+            var input = document.querySelector("#box");
+            input.value = eval(input.value);
+        }
+        function clear(){
+            var input = document.querySelector("#box").value = "";
+        }
+    </script>
+</html>

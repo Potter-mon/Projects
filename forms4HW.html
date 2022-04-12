@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <style>
+        fieldset {
+            width: 500px;
+            margin: auto;
+            margin-top: 200px;
+        }
+
+        body {
+            background-image: url("https://t3.ftcdn.net/jpg/02/90/56/12/360_F_290561217_Osy5HiohnQyF75iIfpiQedKbbZxIY71n.jpg");
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
+
+        table {
+            box-shadow: inset 0px 0px 100px ;
+            color: black;
+        }
+
+        .input {
+            background-color: transparent;
+            border: none;
+            border-bottom: turquoise;
+            border-radius: 5%;
+            color: black;
+            font-family: cursive;
+            width: 250px;
+            padding: 7px;
+            transition: all 1s;
+        }
+
+        .button:hover {
+            background-color: transparent;
+            color:navy;
+            transition: all 1s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .navbar li {
+            float: right;
+        }
+
+        .navbar a {
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+            transition: all 1s;
+        }
+
+        .navbar {
+            height: 47px;
+            background-color: transparent;
+            line-height: 47px;
+        }
+
+        .navbar a:hover {
+            background-color: cadetblue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+        <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/FinalProject.html">Home</a></li>
+        <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ToDoList.html">Dream List</a></li>
+        <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ProjectAbout.html">About</a> </li>
+        <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ContactUs.html">Contact us</a></li>
+        </ul> 
+        </div> <br>
+
+    <h1>Sign in to book tickets now :)</h1>
+    <fieldset>
+        <legend><img
+                src="https://www.pngkit.com/png/full/518-5182883_jacques-benard-explored-the-question-of-whether-collective.png"
+                width="100px" height="100px"></legend>
+        <table>
+            <form action = "ProjectCalculator.html" onsubmit="return validate()">
+                <tr>
+                    <th><label>First Name:</label></th>
+                    <th><input type="text" name="name" placeholder="Enter your name" class="input" required></label></th>
+                </tr>
+                <tr>
+                    <th><label>Last Name:</th>
+                    <th><input type="text" name="lname" placeholder="Enter your last name" class="input"></label></th>
+                </tr>
+                <tr>
+                    <th><label>Date of Birth:</th>
+                    <th><input type="date" name="birth" class="input" required></label></th>
+                </tr>
+                <tr>
+                    <th><label>Email:</th>
+                    <th><input type="email" name="email" placeholder="Enter your email" class="input" required></label></th>
+                </tr>
+                <tr>
+                    <th><label>Password:</th>
+                    <th><input type="password" name="password" id = "pass" placeholder="Enter your email password"
+                            class="input" required></label></th>
+                </tr>
+                <tr>
+                    <th><label>Confirm Password:</th>
+                    <th><input type="password" name="password" id = "cpass" placeholder="Enter your email password"
+                            class="input" required></label></th>
+                </tr>
+                <tr>
+                    <th> Continent:</th>
+                    <th><select name="where" class="input">
+                            <option></option>
+                            <option>Asia</option>
+                            <option>Africa</option>
+                            <option>Europe</option>
+                            <option>Oceania</option>
+                            <option>South America</option>
+                            <option>North America</option>
+                        </select></th>
+                </tr>
+                <tr>
+                    <th><label>Age:</label></th>
+                    <th>18-35<input type="checkbox" name="age"></th>
+                    <th><label>35+<input type="checkbox" name="age"></label></th>
+                </tr>
+                <tr>
+                    <th><label>Gender:</label></th>
+                    <th><label>Male<input type="radio"></label></th>
+                    <th><label>Female<input type="radio"></label></th>
+                </tr>
+                <tr>
+                    <th colspan="3px"><label></label><input type="submit" value="Submit Form" class="button"></label></th>
+                     <th colspan="3px"><label></label><input type="reset" value="Reset Form" class="button"></label></th>
+                </tr>
+            </form>
+        </table>
+    </fieldset>
+</body>
+<script>
+    function validate(){
+            var p = document.querySelector("#pass").value ;
+            var cp = document.querySelector("#cpass").value ;
+
+            if(p == cp){
+                alert("The passwords match!!!")
+            }
+            else{
+                alert("The passwords do not match :(");
+                return false;
+            }
+        }
+</script>
+
+</html>

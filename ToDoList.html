@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Dancing+Script:wght@700&family=Inknut+Antiqua&family=Lobster&family=Pacifico&family=The+Nautigal:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: silver;
+            text-align: center;
+        }
+
+        h1 {
+            text-shadow: 2px 1px 5px red;
+            font-size: 47px;
+            font-family: 'Inknut Antiqua', serif;
+        }
+
+        h3{
+            text-shadow: 2px 1px 5px red;
+            font-family: 'Inknut Antiqua', serif;
+        }
+
+        input {
+            box-shadow: 2px 1px 5px red;
+            margin-right: 30px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .navbar li {
+            float: right;
+        }
+
+        .navbar a {
+            padding: 15px;
+            color: silver;
+            text-decoration: none;
+            transition: all 1s;
+        }
+
+        .navbar {
+            height: 47px;
+            background-color: black;
+            line-height: 47px;
+        }
+
+        .navbar a:hover {
+            background-color: cadetblue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+        <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/FinalProject.html">Home</a></li>
+        <li> <a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ProjectAbout.html">About</a> </li>
+        <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/forms4HW.html">Sign in</a></li>
+        <li><a href="file:///media/fuse/crostini_cc2b2f79642c4ff62b0a96aed81d0d0ab1a13b67_termina_penguin/Web%20dev/Java/ContactUs.html">Contact us</a></li>
+        </ul>
+        </div>  <br>
+
+    <h1>Dream List</h1>
+    <h3>The places that you have always wanted to go can be put on hold until whenever you are ready. You can focus on the present and focus on the future later.
+    </h3> <br>
+
+    <input type="text" id="input">
+    <button onclick=add()>Add Item</button> <br><br>
+
+    <div id="lbox"></div>
+</body>
+<script>
+    function add() {
+        var input = document.querySelector("#input");
+        var lbox = document.querySelector("#lbox");
+        lbox.innerHTML = lbox.innerHTML + "<div id = 'item'>" + input.value + "  " + "<button onclick = remove(this)> Remove </button> </div>"
+        input.value = ""
+        lbox.style.border = "silver 5px solid";
+        lbox.style.borderRadius = "23px";
+        lbox.style.boxShadow = "2px 1px 5px red";
+    }
+    function remove(btn) {
+        btn.parentElement.remove();
+    }
+</script>
+
+</html>
